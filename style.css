@@ -112,7 +112,7 @@ body {
 }
 
 .card {
-    width: 600px;
+    width: 800px;
     height: 400px;
     transform-style: preserve-3d;
     transform: rotateY(0deg);
@@ -126,6 +126,7 @@ body {
 
 .card .front,
 .card .back {
+    
     border-radius: 20px;
     top:150px;
     position: fixed;
@@ -142,14 +143,33 @@ body {
 
 .card .front {
     background: #4285F4;
+    background-image: url("https://res.cloudinary.com/startup-grind/image/fetch/c_scale,w_2560/c_crop,h_650,w_2560,y_0.0_mul_h_sub_0.0_mul_650/c_crop,h_650,w_2560/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/https://res.cloudinary.com/startup-grind/image/upload/c_fill%2Cdpr_2%2Cf_auto%2Cg_center%2Cq_auto:good/v1/gcs/platform-data-goog/contentbuilder/GDG-Bevy-ChapterBanner.jpg");
+    background-size: contain;
 }
 
 .card .back {
-    background: #EA4335;
+    background: #ea443500;
     transform: rotateY(180deg);
+    background-image: url(PE.avif);
+    background-size: cover;
 }
-
+.card .back::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.9); 
+    pointer-events: none; 
+}
 .didi{
     text-align: center;
     font-size: 20px;
 }
+.huhu{
+    z-index:2;
+    color:grey;
+    font-size:40px;
+}
+
