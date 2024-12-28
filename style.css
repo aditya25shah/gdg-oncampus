@@ -11,6 +11,7 @@ body {
     position: relative;
     perspective: 1000px;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 .header {
@@ -87,17 +88,6 @@ body {
     text-transform: none;
 }
 
-.tilt {
-    height: auto;
-    width: 120px;
-    position: fixed;
-    display: inline-block;
-    transform-style: preserve-3d;
-    transition: transform 0.3s ease;
-    margin-top: 13%;
-    margin-left: 46%;
-    border-radius: 15px;
-}
 
 .tilt:hover {
     transform: rotateY(15deg) rotateX(25deg) rotateZ(10deg);
@@ -108,24 +98,33 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    perspective: 1500px; 
-}
-.card {
-    width: 800px;
-    height: 400px;
-    transform-style: preserve-3d;
-    transform: rotateY(0deg);
-    transition: transform 0.5s ease-in-out;
+    perspective: 1500px;
+     
 }
 
-.card:hover {
-    transform: rotateY(180deg); 
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1500px;
+    height: 100%;
 }
+
+.card {
+    width: 800px;
+    height: 500px;
+    border-radius: 20px;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
+    top:150px;
+    transition: transform 0.5s ease-in-out;
+    position: relative;
+}
+
 .card .front,
 .card .back {
-    border-radius: 20px;
-    top:150px;
-    position: fixed;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    position: absolute;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
@@ -135,7 +134,10 @@ body {
     font-size: 48px;
     font-weight: bold;
     color: #fff;
-    transition: 0.5s;
+    transition: 0.7s;
+    padding:20px;
+    border-radius: 20px;
+    box-sizing: border-box;
 }
 
 .card .front {
@@ -149,6 +151,9 @@ body {
     transform: rotateY(180deg); 
     background-image: url(PE.avif);
     background-size: cover;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 20px;
 }
 
 .card .back::before {
@@ -158,8 +163,12 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(255, 255, 255, 0.9); 
+    background: rgba(255, 255, 255, 0.85); 
     pointer-events: none;
+}
+
+.card.flipped {
+    transform: rotateY(180deg);
 }
 
 .didi {
@@ -170,5 +179,57 @@ body {
 .huhu {
     z-index: 2;
     color: grey;
-    font-size: 40px;
+    font-size: 30px;
+    text-align: center;
+    margin: 20px;
+}
+.klass {
+    z-index: 2;
+    font-size: 17px;
+    margin-top: 10px;
+    color:black;
+    text-align: center;
+}
+.section {
+    padding: 60px 20px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.tilt {
+    height: auto;
+    width: 120px;
+    position: fixed;
+    display: inline-block;
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease;
+    margin-top: 12%;
+    margin-left: 47.5%;
+    border-radius: 15px;
+    z-index:100;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.typing-effect {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid #fff;
+    animation: typing 2s steps(20, end), blink 0.5s step-end infinite alternate;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    from, to { border-color: transparent; }
+    50% { border-color: white; }
 }
