@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Times New Roman', Times, serif;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 body {
@@ -43,15 +43,6 @@ body {
     border-radius: 50%; 
 }
 
-.moving-text {
-    display: inline-block;
-    background: linear-gradient(90deg, #FBBC04, #EA4335, #4285F4, #34A853); 
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
 .navbar {
     display: flex;
     align-items: center;
@@ -88,14 +79,36 @@ body {
     left: 0;
 }
 .adi{
-    color:grey
+    color:grey;
+    font-size:20px;
+    text-transform: none;
+}
+body {
+    perspective: 1000px; 
+    overflow-x: hidden;
+}
+.tilt {
+    height:auto;
+    width:120px;
+    position: fixed;
+    display: inline-block;
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease;
+    margin-top:13%;
+    margin-left:46%;
+    border-radius: 15px;
+}
+
+.tilt:hover {
+    transform: rotateY(15deg) rotateX(25deg) rotateZ(10deg);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 .card-container {
     perspective: 1000px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 100px;
+    
 }
 
 .card {
@@ -104,6 +117,7 @@ body {
     transform-style: preserve-3d;
     transform: rotateY(0deg);
     transition: transform 0.5s ease-in-out;
+  
 }
 
 .card:hover {
@@ -112,18 +126,18 @@ body {
 
 .card .front,
 .card .back {
-    position: absolute;
+    border-radius: 20px;
+    top:150px;
+    position: fixed;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 70px;
+    font-size: 48px;
     font-weight: bold;
     color: #fff;
-    border-radius: 20px;
-    top:20%;
 }
 
 .card .front {
@@ -133,4 +147,9 @@ body {
 .card .back {
     background: #EA4335;
     transform: rotateY(180deg);
+}
+
+.didi{
+    text-align: center;
+    font-size: 20px;
 }
