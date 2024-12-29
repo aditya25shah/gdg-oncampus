@@ -1,8 +1,9 @@
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family:'Times New Roman', Times, serif;
 }
 
 body {
@@ -77,6 +78,10 @@ body {
     color: #4285F4; 
 }
 
+navbar a.active{
+    color: #4285F4;
+    font-weight: bold;
+}
 .navbar a:hover::before {
     width: 100%;
     left: 0;
@@ -116,7 +121,7 @@ body {
     border-radius: 20px;
     transform-style: preserve-3d;
     transform: rotateY(0deg);
-    top:150px;
+    top:130px;
     transition: transform 0.5s ease-in-out;
     position: relative;
 }
@@ -144,6 +149,7 @@ body {
     background: #4285F4;
     background-image: url("https://res.cloudinary.com/startup-grind/image/fetch/c_scale,w_2560/c_crop,h_650,w_2560,y_0.0_mul_h_sub_0.0_mul_650/c_crop,h_650,w_2560/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/https://res.cloudinary.com/startup-grind/image/upload/c_fill%2Cdpr_2%2Cf_auto%2Cg_center%2Cq_auto:good/v1/gcs/platform-data-goog/contentbuilder/GDG-Bevy-ChapterBanner.jpg");
     background-size: contain;
+    background-position: center;
 }
 
 .card .back {
@@ -154,6 +160,7 @@ body {
     flex-direction: column;
     text-align: center;
     border-radius: 20px;
+    background-position: center;
 }
 
 .card .back::before {
@@ -166,7 +173,6 @@ body {
     background: rgba(255, 255, 255, 0.85); 
     pointer-events: none;
 }
-
 .card.flipped {
     transform: rotateY(180deg);
 }
@@ -184,10 +190,10 @@ body {
     margin: 20px;
 }
 .klass {
-    z-index: 2;
-    font-size: 17px;
+    z-index: 4;
+    font-size: 15px;
     margin-top: 10px;
-    color:black;
+    color:grey;
     text-align: center;
 }
 .section {
@@ -206,8 +212,8 @@ body {
     display: inline-block;
     transform-style: preserve-3d;
     transition: transform 0.3s ease;
-    margin-top: 12%;
-    margin-left: 47.5%;
+    margin-top: 10%;
+    margin-left: 46.4%;
     border-radius: 15px;
     z-index:100;
     cursor: pointer;
@@ -232,4 +238,287 @@ body {
 @keyframes blink {
     from, to { border-color: transparent; }
     50% { border-color: white; }
+}
+@media (max-width: 768px) {
+    .header {
+        padding: 10px 20px;
+    }
+    .navbar a {
+        margin-left: 20px;
+    }
+    .card {
+        width: 90%;
+        height: auto;
+    }
+}
+/* Contact Modal Styling */
+.contact-modal {
+    position: fixed;
+    top: 14%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    z-index: 101;
+    padding: 20px;
+    display: none; /* Hidden by default */
+}
+
+.contact-modal h2 {
+    text-align: center;
+    font-size: 24px;
+    color: #4285F4;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.contact-modal form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-modal input,
+.contact-modal textarea {
+    font-size: 16px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.contact-modal input:focus,
+.contact-modal textarea:focus {
+    border-color: #4285F4;
+}
+
+.contact-modal button {
+    font-size: 16px;
+    padding: 10px;
+    background-color: #4285F4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-modal button:hover {
+    background-color: #3069d1;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.close-modal:hover {
+    color: #000;
+}
+@media (max-width: 768px) {
+    .contact-modal {
+        width: 90%;
+        padding: 15px;
+    }
+}
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 100; /* Slightly below the modal */
+    display: none; /* Hidden by default */
+}
+/* About Section Styling */
+.about-section {
+    background-color: #F9F9F9;
+    padding: 40px;
+    font-family: Arial, sans-serif;
+}
+
+.about-container {
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #333;
+}
+
+.about-logo img {
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+.about-description {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
+}
+.about-columns {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 30px;
+}
+.about-column h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333;
+}
+.about-column ul {
+    list-style: none;
+    padding: 0;
+}
+.about-column ul li {
+    margin-bottom: 10px;
+}
+.about-column ul li a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #777;
+}
+.about-column ul li a:hover {
+    color: #4285F4;
+}
+.footer {
+    margin-top: 40px;
+    font-size: 14px;
+    color: #777;
+}
+@media screen and (max-width: 768px) {
+    .about-columns {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    .about-logo img {
+        width: 80px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .about-columns {
+        grid-template-columns: 1fr;
+    }
+} 
+.dib{
+    color:#4285f4;
+}
+.afi2{
+    color:#fbbb05 ;
+}
+.afi3{
+    color:#e94335 ;
+}
+.afi4{
+    color:#0f9d58;
+}
+/* Social Icons Styling */
+.social-icons img {
+    width: auto; /* Adjusts the width automatically based on height */
+    height: 30px; /* Set a fixed height for all images */
+    object-fit: contain; /* Ensures the aspect ratio is preserved */
+    transition: transform 0.2s ease-in-out;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2); /* Adds a hover effect */
+}
+..community-page {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.community-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.upload-btn {
+    background-color: #0f9d58;
+    color: white;
+    padding: 15px 25px; /* Increased padding for better visibility */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px; /* Increased font size */
+}
+
+.event-tabs {
+    display: flex;
+    justify-content: start;
+    gap: 15px; /* Increased gap for better spacing */
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    padding: 15px 25px; /* Increased padding */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #f7f9fc;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-size: 18px; /* Increased font size */
+}
+
+.tab-btn.active {
+    background: #0f9d58;
+    color: white;
+}
+
+.tab-btn:hover {
+    background: #e0e0e0;
+}
+
+.event-details {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 25px; /* Increased padding */
+    background: #f7f9fc;
+    font-size: 18px; /* Increased font size for event details */
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.details-btn {
+    margin-top: 20px;
+    padding: 15px 20px; /* Increased padding */
+    background-color: #0f9d58;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px; /* Increased font size */
 }
