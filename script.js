@@ -42,4 +42,56 @@ document.addEventListener('DOMContentLoaded', (event) => {
             });
         });
     });
+
+    // Modal functionality
+    const contactLink = document.querySelector('a[href="#contact"]');
+    const contactModal = document.getElementById('contactModal');
+    const closeModal = document.getElementById('closeModal');
+    const modalOverlay = document.createElement('div');
+    modalOverlay.className = 'modal-overlay';
+    document.body.appendChild(modalOverlay);
+
+    // Show Modal
+    contactLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        contactModal.style.display = 'block';
+        modalOverlay.style.display = 'block';
+        contactModal.setAttribute('aria-hidden', 'false');
+    });
+
+    // Close Modal
+    closeModal.addEventListener('click', () => {
+        contactModal.style.display = 'none';
+        modalOverlay.style.display = 'none';
+        contactModal.setAttribute('aria-hidden', 'true');
+    });
+
+    // Close Modal when clicking outside
+    window.addEventListener('click', (e) => {
+        if (e.target === modalOverlay) {
+            contactModal.style.display = 'none';
+            modalOverlay.style.display = 'none';
+            contactModal.setAttribute('aria-hidden', 'true');
+        }
+    });
+
+});
+function submit(){
+    alert("Thank you for your response. We will get back to you soon.");
+}
+document.addEventListener("DOMContentLoaded", () => {
+    const tabs = document.querySelectorAll(".tab-btn");
+    const contents = document.querySelectorAll(".tab-content");
+
+    tabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+            // Remove active class from all tabs and contents
+            tabs.forEach(t => t.classList.remove("active"));
+            contents.forEach(c => c.classList.remove("active"));
+
+            // Add active class to clicked tab and corresponding content
+            tab.classList.add("active");
+            document.getElementById(tab.dataset.tab).classList.add("active");
+        });
+    });
 });
